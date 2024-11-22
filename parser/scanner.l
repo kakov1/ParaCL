@@ -1,13 +1,9 @@
 %option yyclass="yy::PLexer"
 %option c++
 
-%option noyywrap
-%option yylineno
-
 %{
 
-#include "lexer.hh"
-#include "pgrammar.tab.hh"
+#include "lexer.hpp"
 
 %}
 
@@ -18,9 +14,9 @@ ID            [a-zA-Z][a-zA-Z0-9_]*
 
 %%
 
-{WS}              // all whitespace symbols are ignored in ParaCL
-"+"               return yy::parser::token_type::ADD;
-"-"               return yy::parser::token_type::SUB;
+{WS}              
+"+"               return yy::parser::token_type::PLUS;
+"-"               return yy::parser::token_type::MINUS;
 "*"               return yy::parser::token_type::MUL;
 "/"               return yy::parser::token_type::DIV;
 "%"               return yy::parser::token_type::MOD;

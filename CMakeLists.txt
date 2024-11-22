@@ -7,7 +7,7 @@ add_subdirectory(parser)
 find_package(Boost COMPONENTS program_options REQUIRED)
 
 add_executable(pcl
-  main.cc
+  main.cpp
 )
 
 target_link_libraries(pcl

@@ -10,7 +10,7 @@ flex_target(scanner
 )
 
 bison_target(parser
-  pgrammar.y
+  compiler.y
   ${CMAKE_CURRENT_BINARY_DIR}/parser.cc
   COMPILE_FLAGS "--defines=${CMAKE_CURRENT_BINARY_DIR}/pgrammar.tab.hh"
 )
@@ -18,7 +18,7 @@ bison_target(parser
 add_flex_bison_dependency(scanner parser)
 
 add_library(parser STATIC
-  driver.cc
+  driver.cpp
   ${BISON_parser_OUTPUTS}
   ${FLEX_scanner_OUTPUTS}
 )
